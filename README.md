@@ -2,64 +2,45 @@
 
 ## 📄 Overview
 
-This project simulates a basic routed network using Cisco Packet Tracer. It demonstrates the manual configuration of IP addresses, subnetting, static addressing on PCs, and dynamic routing with RIP version 2. The goal was to ensure full connectivity between end devices across multiple subnets.
+This project demonstrates how to configure IP addresses and dynamic routing between two routers using RIP version 2 in Cisco Packet Tracer. The network consists of two routers, two PCs, and two switches. The objective is to enable end-to-end connectivity through proper IP addressing and routing protocol setup.
+
+This lab follows the step-by-step structure provided in *Network+ Learning Activity #10*, and includes static IP configuration on both routers and PCs, as well as the implementation of RIPv2 to enable communication across subnets.
 
 ---
 
-## 🖼 Topology
+## 🖼️ Topology
 
 The network consists of:
-
-- 2 Routers (Router0 and Router1)
-- 2 Switches (Switch0 and Switch1)
-- 2 PCs (PC0 and PC1)
+- **Router0** (Left)
+- **Router1** (Right)
+- **PC0** (Connected to Router0)
+- **PC1** (Connected to Router1)
+- **Two switches** (for LAN connection to PCs)
 
 ![Network Topology](tt1.png)
 
 ---
 
-## ⚙️ Configuration Details
+## ⚙️ Router Configuration
 
 ### 🔹 Router0
 
-- **GigabitEthernet0/0:** `200.5.5.1` / `255.255.255.192`
-- **Serial0/0/0:** `200.5.5.65` / `255.255.255.192`
-- **RIP Routing:** Enabled (v2)
+1. **Interface GigabitEthernet0/0**
+   - IP: `200.5.5.1`
+   - Subnet Mask: `255.255.255.192`
+2. **Interface Serial0/0/0**
+   - IP: `200.5.5.65`
+   - Subnet Mask: `255.255.255.192`
 
-![Router0 Setup Part 1](tt2.png)  
-![Router0 Setup Part 2](tt3.png)
+![Router0 - G0/0 Config](tt2.png)  
+![Router0 - Serial Config](tt3.png)
 
----
+#### 🔄 RIP Configuration on Router0
+- RIP Version: 2
+- Network: `200.5.5.0`
 
-### 🔹 Router1
-
-- **GigabitEthernet0/0:** `200.5.5.129` / `255.255.255.192`
-- **Serial0/0/0:** `200.5.5.66` / `255.255.255.192`
-- **RIP Routing:** Enabled (v2)
-
-![Router1 Setup](tt4.png)
-
----
-
-### 🖥 PC Configuration
-
-#### PC0 (Left Side)
-- **IP Address:** `200.5.5.2`
-- **Subnet Mask:** `255.255.255.192`
-- **Default Gateway:** `200.5.5.1`
-
-![PC0 Config](tt5.png)
-
-#### PC1 (Right Side)
-- **IP Address:** `200.5.5.130`
-- **Subnet Mask:** `255.255.255.192`
-- **Default Gateway:** `200.5.5.129`
-
-![PC1 Config](tt6.png)
-
----
-
-## 🔁 Routing Protocol
-
-Both routers were configured with RIP version 2 using the following network:
-
+Commands used:
+```bash
+router rip
+version 2
+network 200.5.5.0
