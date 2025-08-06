@@ -1,46 +1,81 @@
-# Configuring IP Addresses and Routing — Cisco Packet Tracer
+# Network Configuration with RIP Routing – Cisco Packet Tracer
 
-## 📄 Overview
+This project demonstrates IP address configuration and RIP routing between two Cisco routers with connected PCs in Packet Tracer.
 
-This project demonstrates how to configure IP addresses and dynamic routing between two routers using RIP version 2 in Cisco Packet Tracer. The network consists of two routers, two PCs, and two switches. The objective is to enable end-to-end connectivity through proper IP addressing and routing protocol setup.
+## 🧠 Objective
 
-This lab follows the step-by-step structure provided in *Network+ Learning Activity #10*, and includes static IP configuration on both routers and PCs, as well as the implementation of RIPv2 to enable communication across subnets.
+To simulate and configure a routed network where:
+- Two routers are connected via serial interface
+- RIPv2 routing protocol is implemented
+- Static IPs are assigned to end devices
+- End-to-end connectivity is verified using ping
 
----
+## 🖥️ Network Topology
 
-## 🖼️ Topology
-
-The network consists of:
-- **Router0** (Left)
-- **Router1** (Right)
-- **PC0** (Connected to Router0)
-- **PC1** (Connected to Router1)
-- **Two switches** (for LAN connection to PCs)
+- Two routers (`Router0`, `Router1`)
+- Two switches (`Switch0`, `Switch1`)
+- Two client PCs (`PC0`, `PC1`)
 
 ![Network Topology](tt1.png)
 
+## ⚙️ Configuration Details
+
+### Router0 Configuration
+- GigabitEthernet0/0: `200.5.5.1/26`
+- Serial0/0/0: `200.5.5.65/26` (DCE with clock rate 64000)
+- RIPv2 enabled for network `200.5.5.0`
+
+![Router0 Config](tt3.png)
+
+### Router1 Configuration
+- GigabitEthernet0/0: `200.5.5.129/26`
+- Serial0/0/0: `200.5.5.66/26`
+- RIPv2 enabled for network `200.5.5.0`
+
+![Router1 Config](tt4.png)
+
+### PC0 (Static Configuration)
+- IP Address: `200.5.5.2`
+- Subnet Mask: `255.255.255.192`
+- Default Gateway: `200.5.5.1`
+
+![PC0 Config](tt5.png)
+
+### PC1 (Static Configuration)
+- IP Address: `200.5.5.130`
+- Subnet Mask: `255.255.255.192`
+- Default Gateway: `200.5.5.129`
+
+![PC1 Config](tt6.png)
+
+## ✅ Connectivity Test
+
+Ping test was run from `PC0` to `PC1` (`200.5.5.130`).
+
+Result:
+- All packets successfully received (0% loss)
+- Round trip times between 1ms and 26ms
+
+![Ping Result](tt9.png)
+
+## 💡 Notes
+
+- Ensure serial interfaces have correct DCE/DTE configuration
+- Verify RIP version 2 is enabled on both routers
+- Check interface status with `show ip interface brief`
+- Routing tables can be viewed with `show ip route`
+
 ---
 
-## ⚙️ Router Configuration
+## 📁 Files Included
 
-### 🔹 Router0
+| File | Description |
+|------|-------------|
+| [Network Config.pkt](./Network%20Config.pkt) | Cisco Packet Tracer file |
+| [tt1.png](./tt1.png) → [tt9.png](./tt9.png) | Screenshots of topology, configuration, and verification |
+| [README.md](./README.md) | Documentation (this file) |
 
-1. **Interface GigabitEthernet0/0**
-   - IP: `200.5.5.1`
-   - Subnet Mask: `255.255.255.192`
-2. **Interface Serial0/0/0**
-   - IP: `200.5.5.65`
-   - Subnet Mask: `255.255.255.192`
+## 🔗 Author
 
-![Router0 - G0/0 Config](tt2.png)  
-![Router0 - Serial Config](tt3.png)
-
-#### 🔄 RIP Configuration on Router0
-- RIP Version: 2
-- Network: `200.5.5.0`
-
-Commands used:
-```bash
-router rip
-version 2
-network 200.5.5.0
+Anthony Alston  
+GitHub: [AnthonyAAlston](https://github.com/AnthonyAAlston)
