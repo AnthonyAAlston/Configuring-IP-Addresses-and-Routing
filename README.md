@@ -11,7 +11,7 @@ To simulate and configure a routed network where:
 - End-to-end connectivity is verified using ping
 
 ## 🖥️ Network Topology
-
+We started out with:
 - Two routers (`Router0`, `Router1`)
 - Two switches (`Switch0`, `Switch1`)
 - Two client PCs (`PC0`, `PC1`)
