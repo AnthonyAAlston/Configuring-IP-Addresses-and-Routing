@@ -1,14 +1,19 @@
-# IP Addressing & Routing — Cisco Packet Tracer
+# Configuring IP Addresses and Routing — Cisco Packet Tracer
 
 ## 📄 Overview
-This project demonstrates how to configure static IP addresses and routing protocols in a multi-router network using Cisco Packet Tracer. It includes:
-- Assigning static IP addresses to PCs and router interfaces
-- Enabling and configuring RIP version 2 for routing
-- Verifying connectivity through ping tests
+
+This project simulates a basic routed network using Cisco Packet Tracer. It demonstrates the manual configuration of IP addresses, subnetting, static addressing on PCs, and dynamic routing with RIP version 2. The goal was to ensure full connectivity between end devices across multiple subnets.
 
 ---
 
 ## 🖼 Topology
+
+The network consists of:
+
+- 2 Routers (Router0 and Router1)
+- 2 Switches (Switch0 and Switch1)
+- 2 PCs (PC0 and PC1)
+
 ![Network Topology](tt1.png)
 
 ---
@@ -16,71 +21,45 @@ This project demonstrates how to configure static IP addresses and routing proto
 ## ⚙️ Configuration Details
 
 ### 🔹 Router0
-- **Interface g0/0**: `200.5.5.1 / 255.255.255.192`
-- **Routing Protocol**: RIP v2
-- **Network**: `200.5.5.0`
 
-![Router0 Configuration](tt2.png)
-![Router0 RIP Config](tt3.png)
+- **GigabitEthernet0/0:** `200.5.5.1` / `255.255.255.192`
+- **Serial0/0/0:** `200.5.5.65` / `255.255.255.192`
+- **RIP Routing:** Enabled (v2)
+
+![Router0 Setup Part 1](tt2.png)  
+![Router0 Setup Part 2](tt3.png)
 
 ---
 
 ### 🔹 Router1
-- **Interface g0/0**: `200.5.5.129 / 255.255.255.192`
-- **Interface s0/0/0**: `200.5.5.66 / 255.255.255.192`
-- **Routing Protocol**: RIP v2
-- **Network**: `200.5.5.0`
 
-![Router1 Interface & RIP Setup](tt4.png)
+- **GigabitEthernet0/0:** `200.5.5.129` / `255.255.255.192`
+- **Serial0/0/0:** `200.5.5.66` / `255.255.255.192`
+- **RIP Routing:** Enabled (v2)
 
----
-
-## 🖥 End Devices
-
-### 🔹 PC0
-- **IP Address**: `200.5.5.2`
-- **Subnet Mask**: `255.255.255.192`
-- **Default Gateway**: `200.5.5.1`
-
-![PC0 Static IP](tt5.png)
+![Router1 Setup](tt4.png)
 
 ---
 
-### 🔹 PC1
-- **IP Address**: `200.5.5.130`
-- **Subnet Mask**: `255.255.255.192`
-- **Default Gateway**: `200.5.5.129`
+### 🖥 PC Configuration
 
-![PC1 Static IP](tt6.png)
+#### PC0 (Left Side)
+- **IP Address:** `200.5.5.2`
+- **Subnet Mask:** `255.255.255.192`
+- **Default Gateway:** `200.5.5.1`
 
----
+![PC0 Config](tt5.png)
 
-## 🔄 Routing & Connectivity Testing
+#### PC1 (Right Side)
+- **IP Address:** `200.5.5.130`
+- **Subnet Mask:** `255.255.255.192`
+- **Default Gateway:** `200.5.5.129`
 
-### 🔹 Serial Links and RIP Protocol
-Both routers were configured with RIP version 2 and had appropriate networks advertised.
-
-![Serial Interface Setup](tt7.png)
-![Routing Protocol Config](tt8.png)
-
----
-
-### 🔹 Ping Verification
-Connectivity was verified by successfully pinging `200.5.5.130` from PC0 with 0% packet loss.
-
-![Ping Test](tt9.png)
+![PC1 Config](tt6.png)
 
 ---
 
-## 📁 Files Included
+## 🔁 Routing Protocol
 
-| File                            | Description                                  |
-|---------------------------------|----------------------------------------------|
-| `Configuring IP Addresses.pkt`  | Cisco Packet Tracer file for IP & Routing Lab|
-| `tt1.png → tt9.png`             | Screenshots of topology, config, and testing |
-| `README.md`                     | Documentation (this file)                    |
+Both routers were configured with RIP version 2 using the following network:
 
----
-
-## ✅ Outcome
-All devices were configured with appropriate static IP addresses, RIP routing was successfully implemented, and full end-to-end communication between PCs was achieved.
