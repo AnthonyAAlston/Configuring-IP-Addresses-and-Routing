@@ -20,10 +20,17 @@ We started out with:
 
 ## ⚙️ Configuration Details
 
-### Router0 Configuration
-- GigabitEthernet0/0: `200.5.5.1/26`
-- Serial0/0/0: `200.5.5.65/26` (DCE with clock rate 64000)
-- RIPv2 enabled for network `200.5.5.0`
+### 🔧 Router0 Configuration
+
+- **Entered privileged and global config mode** to allow changes to the router settings.
+
+- **Configured GigabitEthernet0/0** with IP `200.5.5.1/26` and used `no shutdown` to activate the interface. This connects the router to the local network.
+
+- **Used `show ip interface brief`** to verify that the interface was up and running.
+
+- **Enabled RIP version 2 routing**, which supports subnetting and allows the router to dynamically share routing information with other routers.
+
+- **Saved the configuration** using `copy run start` so settings are retained after a reboot.
 
 ![Router0 Config](tt3.png)
 
