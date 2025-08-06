@@ -34,10 +34,16 @@ We started out with:
 
 ![Router0 Config](tt3.png)
 
-### Router1 Configuration
-- GigabitEthernet0/0: `200.5.5.129/26`
-- Serial0/0/0: `200.5.5.66/26`
-- RIPv2 enabled for network `200.5.5.0`
+### 🔧 Router1 Configuration 
+
+- **Configured GigabitEthernet0/0** with IP `200.5.5.129/26` and activated it using `no shutdown` to connect Router1 to its local network.
+
+- **Set IP on Serial0/0/0** to `200.5.5.66/26` for communication with Router0 over the WAN link.
+
+- **Enabled interfaces and verified status** using `show ip interface brief` to confirm IP assignments and link states.
+
+- **Configured RIP version 2** and advertised the `200.5.5.0` network to allow dynamic routing between both routers.
+
 
 ![Router1 Config](tt4.png)
 
