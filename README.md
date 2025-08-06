@@ -61,22 +61,22 @@ We started out with:
 
 ![PC1 Config](tt6.png)
 
-## ✅ Connectivity Test
+### ✅ Connectivity Test – Brief Explanation
 
-Ping test was run from `PC0` to `PC1` (`200.5.5.130`).
+- A successful ping test was performed from **PC0** to **PC1 (200.5.5.130)**, verifying end-to-end network connectivity.
 
-Result:
-- All packets successfully received (0% loss)
-- Round trip times between 1ms and 26ms
+- All packets were received with **0% loss**, confirming that both IP configuration and routing are functioning correctly.
+
+- The **round-trip times** ranged from **1ms to 26ms**, showing efficient communication with minimal latency.
 
 ![Ping Result](tt9.png)
 
 ## 💡 Notes
 
-- Ensure serial interfaces have correct DCE/DTE configuration
-- Verify RIP version 2 is enabled on both routers
-- Check interface status with `show ip interface brief`
-- Routing tables can be viewed with `show ip route`
+- Ensure that **Serial interfaces** are configured correctly with proper **DCE/DTE roles** and clock rate on the DCE side.
+- Confirm that **RIP version 2** is enabled on both routers for proper dynamic routing with subnet support.
+- Use `show ip interface brief` to quickly check the **status and IP assignments** of all interfaces.
+- View current **routing information** with `show ip route` to verify learned routes and network reachability.
 
 ---
 
