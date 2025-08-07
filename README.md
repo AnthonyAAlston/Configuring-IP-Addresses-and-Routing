@@ -24,40 +24,40 @@ We started out with:
 
 - **Entered privileged and global config mode** to allow changes to the router settings.
 
-- **Configured GigabitEthernet0/0** with IP `200.5.5.1/26` and used `no shutdown` to activate the interface. This connects the router to the local network.
+- **Configured GigabitEthernet0/0** with IP **200.5.5.1/26** and used **no shutdown** to activate the interface. This connects the router to the local network.
 
-- **Used `show ip interface brief`** to verify that the interface was up and running.
+- **Used show ip interface brief** to verify that the interface was up and running.
 
 - **Enabled RIP version 2 routing**, which supports subnetting and allows the router to dynamically share routing information with other routers.
 
-- **Saved the configuration** using `copy run start` so settings are retained after a reboot.
+- **Saved the configuration** using **copy run start** so settings are retained after a reboot.
 
 ![Router0 Config](tt3.png)
 
 ### 🔧 Router1 Configuration 
 
-- **Configured GigabitEthernet0/0** with IP `200.5.5.129/26` and activated it using `no shutdown` to connect Router1 to its local network.
+- **Configured GigabitEthernet0/0** with IP **200.5.5.129/26** and activated it using **no shutdown** to connect Router1 to its local network.
 
-- **Set IP on Serial0/0/0** to `200.5.5.66/26` for communication with Router0 over the WAN link.
+- **Set IP on Serial0/0/0** to **200.5.5.66/26** for communication with Router0 over the WAN link.
 
-- **Enabled interfaces and verified status** using `show ip interface brief` to confirm IP assignments and link states.
+- **Enabled interfaces and verified status** using **show ip interface brief** to confirm IP assignments and link states.
 
-- **Configured RIP version 2** and advertised the `200.5.5.0` network to allow dynamic routing between both routers.
+- **Configured RIP version 2** and advertised the **200.5.5.0** network to allow dynamic routing between both routers.
 
 
 ![Router1 Config](tt4.png)
 
 ### PC0 (Static Configuration)
-- IP Address: `200.5.5.2`
-- Subnet Mask: `255.255.255.192`
-- Default Gateway: `200.5.5.1`
+- IP Address: **200.5.5.2**
+- Subnet Mask: **255.255.255.192**
+- Default Gateway: **200.5.5.1**
 
 ![PC0 Config](tt5.png)
 
 ### PC1 (Static Configuration)
-- IP Address: `200.5.5.130`
-- Subnet Mask: `255.255.255.192`
-- Default Gateway: `200.5.5.129`
+- IP Address: **200.5.5.130**
+- Subnet Mask: **255.255.255.192**
+- Default Gateway: **200.5.5.129**
 
 ![PC1 Config](tt6.png)
 
@@ -75,8 +75,8 @@ We started out with:
 
 - Ensure that **Serial interfaces** are configured correctly with proper **DCE/DTE roles** and clock rate on the DCE side.
 - Confirm that **RIP version 2** is enabled on both routers for proper dynamic routing with subnet support.
-- Use `show ip interface brief` to quickly check the **status and IP assignments** of all interfaces.
-- View current **routing information** with `show ip route` to verify learned routes and network reachability.
+- Use **show ip interface brief** to quickly check the **status and IP assignments** of all interfaces.
+- View current **routing information** with **show ip route** to verify learned routes and network reachability.
 
 ---
 
