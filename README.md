@@ -10,7 +10,7 @@ To simulate and configure a routed network where:
 - Static IPs are assigned to end devices
 - End-to-end connectivity is verified using ping
 
-## 🖥️ Network Topology
+## Network Topology
 We started out with:
 - Two routers (`Router0`, `Router1`)
 - Two switches (`Switch0`, `Switch1`)
