@@ -2,7 +2,7 @@
 
 This project demonstrates IP address configuration and RIP routing between two Cisco routers with connected PCs in Packet Tracer.
 
-## 🧠 Objective
+## Objective
 
 To simulate and configure a routed network where:
 - Two routers are connected via serial interface
@@ -18,9 +18,9 @@ We started out with:
 
 ![Network Topology](tt1.png)
 
-## ⚙️ Configuration Details
+## Configuration Details
 
-### 🔧 Router0 Configuration
+## Router0 Configuration
 
 - **Entered privileged and global config mode** to allow changes to the router settings.
 
@@ -61,7 +61,7 @@ We started out with:
 
 ![PC1 Config](tt6.png)
 
-### ✅ Connectivity Test – Brief Explanation
+### Connectivity Test – Brief Explanation
 
 - A successful ping test was performed from **PC0** to **PC1 (200.5.5.130)**, verifying end-to-end network connectivity.
 
@@ -71,7 +71,7 @@ We started out with:
 
 ![Ping Result](tt9.png)
 
-## 💡 Notes
+## Notes
 
 - Ensure that **Serial interfaces** are configured correctly with proper **DCE/DTE roles** and clock rate on the DCE side.
 - Confirm that **RIP version 2** is enabled on both routers for proper dynamic routing with subnet support.
@@ -88,7 +88,7 @@ We started out with:
 | [tt1.png](./tt1.png) → [tt9.png](./tt9.png) | Screenshots of topology, configuration, and verification |
 | [README.md](./README.md) | Documentation (this file) |
 
-## 🔗 Author
+## Author
 
 Anthony Alston  
 GitHub: [AnthonyAAlston](https://github.com/AnthonyAAlston)
