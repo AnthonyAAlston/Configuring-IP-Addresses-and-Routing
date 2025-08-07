@@ -12,9 +12,9 @@ To simulate and configure a routed network where:
 
 ## Network Topology
 We started out with:
-- Two routers (`Router0`, `Router1`)
-- Two switches (`Switch0`, `Switch1`)
-- Two client PCs (`PC0`, `PC1`)
+- Two routers (**Router0, Router1**)
+- Two switches (**Switch0, Switch1**)
+- Two client PCs (**PC0, PC1**)
 
 ![Network Topology](tt1.png)
 
@@ -34,7 +34,7 @@ We started out with:
 
 ![Router0 Config](tt3.png)
 
-### 🔧 Router1 Configuration 
+### Router1 Configuration 
 
 - **Configured GigabitEthernet0/0** with IP **200.5.5.129/26** and activated it using **no shutdown** to connect Router1 to its local network.
 
