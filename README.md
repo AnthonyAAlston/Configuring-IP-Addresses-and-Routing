@@ -73,5 +73,5 @@ We started out with:
 ## Author
 
 **Anthony Alston**  
-GitHub: [AnthonyAAlston](https://github.com/AnthonyAAlston)
-[LinkedIn](linkedin.com/in/anthonyaalston/) 
+- GitHub: [AnthonyAAlston](https://github.com/AnthonyAAlston)
+- [LinkedIn](linkedin.com/in/anthonyaalston/) 
