@@ -80,13 +80,9 @@ We started out with:
 
 ---
 
-## 📁 Files Included
+##  Packet Tracer File
 
-| File | Description |
-|------|-------------|
-| [Network Config.pkt](./Network%20Config.pkt) | Cisco Packet Tracer file |
-| [tt1.png](./tt1.png) → [tt9.png](./tt9.png) | Screenshots of topology, configuration, and verification |
-| [README.md](./README.md) | Documentation (this file) |
+| [README.md](./README.md) |
 
 ## Author
 
