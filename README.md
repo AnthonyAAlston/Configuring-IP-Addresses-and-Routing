@@ -80,10 +80,6 @@ We started out with:
 
 ---
 
-##  Packet Tracer File
-
-| [README.md](./README.md) |
-
 ## Author
 
 Anthony Alston  
