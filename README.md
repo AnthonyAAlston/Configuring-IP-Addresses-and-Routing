@@ -75,5 +75,4 @@ We started out with:
 **Anthony Alston**  
 GitHub: [AnthonyAAlston](https://github.com/AnthonyAAlston)
 
-
 [LinkedIn](linkedin.com/in/anthonyaalston/) 
